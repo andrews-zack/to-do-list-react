@@ -13,7 +13,8 @@ function Footer() {
                     <button className="btn btn-info mx-1 my-1">Completed Tasks</button>
                 </div>
                 <div className="col-auto">
-                    <button className="btn btn-success my-1">Complete all tasks</button>
+                    <button className="btn btn-success my-1 mx-1">✓ all</button>
+                    <button className="btn btn-danger my-1 mx-1">X all</button>
                 </div>
             </div>
         </div>
