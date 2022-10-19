@@ -11,8 +11,8 @@ function List() {
                             <label className="form-check-label" for="firstCheckbox">Take out the trash</label>
                         </li>
                     </div>
-                    <div className="col-1 d-flex justify-content-center py-1">
-                        <button className="btn btn-danger">X</button>
+                    <div className="col-1 d-flex justify-content-center ps-1 py-1">
+                        <button className="btn btn-danger me-3">X</button>
                     </div>
                     <div className="col-11 py-1">
                         <li className="list-group-item">
@@ -20,8 +20,8 @@ function List() {
                             <label className="form-check-label" for="secondCheckbox">Clean dishes</label>
                         </li>
                     </div>
-                    <div className="col-1 d-flex justify-content-center py-1">
-                        <button className="btn btn-danger">X</button>
+                    <div className="col-1 d-flex justify-content-center ps-1 py-1">
+                        <button className="btn btn-danger me-3">X</button>
                     </div>
                     <div className="col-11 py-1">
                         <li className="list-group-item">
@@ -29,8 +29,8 @@ function List() {
                             <label className="form-check-label" for="thirdCheckbox">Do laundry</label>
                         </li>
                         </div>
-                    <div className="col-1 d-flex justify-content-center py-1">
-                        <button className="btn btn-danger">X</button>
+                    <div className="col-1 d-flex justify-content-center ps-1 py-1">
+                        <button className="btn btn-danger me-3 ">X</button>
                     </div>
                 </div>
             </ul>
