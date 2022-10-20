@@ -2,15 +2,17 @@
 
 function List(props) {
     
-    function complete() {
-        let text = document.getElementById("list-item")
+    function complete(id) {
+        // let toDos = document.getElementById("list-item")
         let checkbox = document.getElementById("list-checkbox")
         if (checkbox.checked === true) {
-            text.classList.add("text-decoration-line-through", "text-success")
-            
+            // return x.classList.add("text-decoration-line-through", "text-success")
+            props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: true} : keith))
+            checkbox.checked = true
         } else {
-            text.classList.remove("text-decoration-line-through", "text-success")
-            props.item.done = false
+            // return x.classList.remove("text-decoration-line-through", "text-success")
+            props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: false} : keith))
+            checkbox.map(x => x.checked = false)
         }
     }
 
@@ -31,7 +33,7 @@ function List(props) {
     <>
         <div className="col-11 col-lg-7 py-1" key={thing.id}>
             <li className="list-group-item ms-md-4">
-                <input className="form-check-input me-1" type="checkbox" value="" id="list-checkbox" onClick={complete}></input>
+                <input className="form-check-input me-1" type="checkbox" value="" defaultChecked={thing.done} id="list-checkbox" onClick={() => complete(thing.id)}></input>
                 <label className="form-check-label" for="firstCheckbox" id="list-item">{thing.itemText}</label>
             </li>
         </div>

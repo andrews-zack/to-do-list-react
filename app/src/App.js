@@ -20,7 +20,7 @@ function App() {
         <div className="d-flex flex-column justify-content-center align-content-center vh-100">
             <Input item={item} setItem={setItem}/>
             <List item={item} setItem={setItem} page={page}/>
-            <Footer handlePage={handlePage} page={page} pageState={pageState} item={item}/>
+            <Footer handlePage={handlePage} page={page} pageState={pageState} item={item} setItem={setItem}/>
             {/* {console.log(item)} */}
         </div>
     )
