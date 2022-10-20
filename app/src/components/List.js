@@ -3,7 +3,6 @@
 function List(props) {
     
     function complete(id) {
-        // let toDos = document.getElementById("list-item")
         let checkbox = document.getElementById("list-checkbox")
         if (checkbox.checked === true) {
             // return x.classList.add("text-decoration-line-through", "text-success")
@@ -12,14 +11,10 @@ function List(props) {
         } else {
             // return x.classList.remove("text-decoration-line-through", "text-success")
             props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: false} : keith))
-            checkbox.map(x => x.checked = false)
+            checkbox.checked = false
         }
     }
 
-    // let activeItems = props.item.filter((x) => x.done === false)
-    // let allItems = props.item.filter((x) => x.done === false || x.done === true)
-    // let completedItems = props.item.filter((x) => x.done === true)
-    // props.setItem(completedItems)
     let renderTask = [];
     if (props.page === "All Tasks") {
         renderTask = props.item
@@ -48,9 +43,6 @@ function List(props) {
             <ul className="list-group">
                 <div className="row justify-content-center">
                     {listItems}
-                    {/* {props.page === "All Tasks" && allItems}
-                    {props.page === "Completed Tasks" && completedItems}
-                    {props.page === "Active Tasks" && activeItems} */}
                 </div>
             </ul>
         </div>
