@@ -4,6 +4,7 @@ function List(props) {
     
     function complete(id) {
         let checkbox = document.getElementById("list-checkbox")
+        console.log(checkbox)
         if (checkbox.checked === true) {
             // return x.classList.add("text-decoration-line-through", "text-success")
             props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: true} : keith))
@@ -24,6 +25,7 @@ function List(props) {
         renderTask = props.item.filter((x) => x.done === true)
     }
     console.log(props.item)
+    
     let listItems = renderTask.map((thing) =>
     <>
         <div className="col-11 col-lg-7 py-1" key={thing.id}>
