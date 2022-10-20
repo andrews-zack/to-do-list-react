@@ -4,7 +4,7 @@ function Footer() {
     return(
         <div className="container pt-2">
             <div className="row flex-column flex-md-row align-items-center justify-content-center">
-                <div className="col-2 col-lg-1 d-flex justify-content-center">
+                <div className="col-2 col-md-1 d-flex justify-content-center">
                     <p className=" fw-2 fw-bold">Count</p>
                 </div>
                 <div className="col-6 col-lg-5 d-flex flex-column flex-md-row justify-content-center">
