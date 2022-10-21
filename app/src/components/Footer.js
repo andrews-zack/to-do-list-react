@@ -10,8 +10,8 @@ function Footer(props) {
         )
         let checkboxes = document.getElementsByName('special');
         for(let i=0, n=checkboxes.length; i<n; i++) {
-        checkboxes[i].checked = true;
-    }
+            checkboxes[i].checked = true;
+        }
     }
     
     return(
