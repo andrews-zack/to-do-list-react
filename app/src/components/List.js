@@ -6,11 +6,11 @@ function List(props) {
         // console.log(e.target)
         let checkbox = e.target
         if (checkbox.checked === true) {
-            e.target.classList.add("text-decoration-line-through", "text-success")
+            // e.target.classList.add("text-decoration-line-through", "text-success")
             props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: true} : keith))
             checkbox.checked = true
         } else {
-            e.target.classList.remove("text-decoration-line-through", "text-success")
+            // e.target.classList.remove("text-decoration-line-through", "text-success")
             props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: false} : keith))
             checkbox.checked = false
         }
