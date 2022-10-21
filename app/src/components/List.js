@@ -3,7 +3,6 @@
 function List(props) {
     
     const handleCheck = (id, e) => {
-        // console.log(e.target)
         let checkbox = e.target
         if (checkbox.checked === true) {
             // e.target.classList.add("text-decoration-line-through", "text-success")
@@ -24,7 +23,6 @@ function List(props) {
     } else if (props.page === "Completed Tasks") {
         renderTask = props.item.filter((x) => x.done === true)
     }
-    // console.log(props.item)
     
     let listItems = renderTask.map((item) =>
     <>
