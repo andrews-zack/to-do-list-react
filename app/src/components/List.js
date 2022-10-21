@@ -28,7 +28,7 @@ function List(props) {
     <>
         <div className="col-11 col-lg-7 py-1" key={item.id}>
             <li className="list-group-item ms-md-4">
-                <input className="form-check-input me-1" type="checkbox" value="" defaultChecked={item.done} id="list-checkbox" onClick={(e) => handleCheck(item.id, e)}></input>
+                <input className="form-check-input me-1" type="checkbox" value="" name="special" defaultChecked={item.done} id="list-checkbox" onClick={(e) => handleCheck(item.id, e)}></input>
                 <label className="form-check-label" for="firstCheckbox" id="list-item">{item.itemText}</label>
             </li>
         </div>
