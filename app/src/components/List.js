@@ -2,15 +2,15 @@
 
 function List(props) {
     
-    function complete(id) {
-        let checkbox = document.getElementById("list-checkbox")
-        console.log(checkbox)
+    const handleCheck = (id, e) => {
+        // console.log(e.target)
+        let checkbox = e.target
         if (checkbox.checked === true) {
-            // return x.classList.add("text-decoration-line-through", "text-success")
+            e.target.classList.add("text-decoration-line-through", "text-success")
             props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: true} : keith))
             checkbox.checked = true
         } else {
-            // return x.classList.remove("text-decoration-line-through", "text-success")
+            e.target.classList.remove("text-decoration-line-through", "text-success")
             props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: false} : keith))
             checkbox.checked = false
         }
@@ -24,18 +24,18 @@ function List(props) {
     } else if (props.page === "Completed Tasks") {
         renderTask = props.item.filter((x) => x.done === true)
     }
-    console.log(props.item)
+    // console.log(props.item)
     
-    let listItems = renderTask.map((thing) =>
+    let listItems = renderTask.map((item) =>
     <>
-        <div className="col-11 col-lg-7 py-1" key={thing.id}>
+        <div className="col-11 col-lg-7 py-1" key={item.id}>
             <li className="list-group-item ms-md-4">
-                <input className="form-check-input me-1" type="checkbox" value="" defaultChecked={thing.done} id="list-checkbox" onClick={() => complete(thing.id)}></input>
-                <label className="form-check-label" for="firstCheckbox" id="list-item">{thing.itemText}</label>
+                <input className="form-check-input me-1" type="checkbox" value="" defaultChecked={item.done} id="list-checkbox" onClick={(e) => handleCheck(item.id, e)}></input>
+                <label className="form-check-label" for="firstCheckbox" id="list-item">{item.itemText}</label>
             </li>
         </div>
         <div className="col-1 d-flex justify-content-center ps-1 py-1">
-            <button className="btn btn-danger me-3" onClick={() => {props.setItem(props.item.filter(x => x.id !== thing.id))}}>X</button>
+            <button className="btn btn-danger me-3" onClick={() => {props.setItem(props.item.filter(x => x.id !== item.id))}}>X</button>
         </div>
     </>
     )
