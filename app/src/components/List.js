@@ -2,24 +2,19 @@
 
 function List(props) {
     
-    function complete(id) {
-        // let toDos = document.getElementById("list-item")
-        let checkbox = document.getElementById("list-checkbox")
+    const handleCheck = (id, e) => {
+        let checkbox = e.target
         if (checkbox.checked === true) {
-            // return x.classList.add("text-decoration-line-through", "text-success")
+            // e.target.classList.add("text-decoration-line-through", "text-success")
             props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: true} : keith))
             checkbox.checked = true
         } else {
-            // return x.classList.remove("text-decoration-line-through", "text-success")
+            // e.target.classList.remove("text-decoration-line-through", "text-success")
             props.setItem(props.item.map(keith => keith.id === id ? {...keith, done: false} : keith))
-            checkbox.map(x => x.checked = false)
+            checkbox.checked = false
         }
     }
 
-    // let activeItems = props.item.filter((x) => x.done === false)
-    // let allItems = props.item.filter((x) => x.done === false || x.done === true)
-    // let completedItems = props.item.filter((x) => x.done === true)
-    // props.setItem(completedItems)
     let renderTask = [];
     if (props.page === "All Tasks") {
         renderTask = props.item
@@ -28,17 +23,17 @@ function List(props) {
     } else if (props.page === "Completed Tasks") {
         renderTask = props.item.filter((x) => x.done === true)
     }
-    console.log(props.item)
-    let listItems = renderTask.map((thing) =>
+    
+    let listItems = renderTask.map((item) =>
     <>
-        <div className="col-11 col-lg-7 py-1" key={thing.id}>
+        <div className="col-11 col-lg-7 py-1" key={item.id}>
             <li className="list-group-item ms-md-4">
-                <input className="form-check-input me-1" type="checkbox" value="" defaultChecked={thing.done} id="list-checkbox" onClick={() => complete(thing.id)}></input>
-                <label className="form-check-label" for="firstCheckbox" id="list-item">{thing.itemText}</label>
+                <input className="form-check-input me-1" type="checkbox" value="" defaultChecked={item.done} id="list-checkbox" onClick={(e) => handleCheck(item.id, e)}></input>
+                <label className="form-check-label" for="firstCheckbox" id="list-item">{item.itemText}</label>
             </li>
         </div>
         <div className="col-1 d-flex justify-content-center ps-1 py-1">
-            <button className="btn btn-danger me-3" onClick={() => {props.setItem(props.item.filter(x => x.id !== thing.id))}}>X</button>
+            <button className="btn btn-danger me-3" onClick={() => {props.setItem(props.item.filter(x => x.id !== item.id))}}>X</button>
         </div>
     </>
     )
@@ -48,9 +43,6 @@ function List(props) {
             <ul className="list-group">
                 <div className="row justify-content-center">
                     {listItems}
-                    {/* {props.page === "All Tasks" && allItems}
-                    {props.page === "Completed Tasks" && completedItems}
-                    {props.page === "Active Tasks" && activeItems} */}
                 </div>
             </ul>
         </div>

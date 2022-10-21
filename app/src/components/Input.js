@@ -10,7 +10,6 @@ function Input(props) {
         let itemText = userInput.current.value
         props.setItem([...props.item, {itemText, done, id}])
         userInput.current.value = null
-        
     }
     
     return (
