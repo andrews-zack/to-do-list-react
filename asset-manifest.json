@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/andrews-zack.github.io/to-do-list-react/static/css/main.c59cc657.css",
+    "main.js": "/andrews-zack.github.io/to-do-list-react/static/js/main.b3219a2d.js",
+    "index.html": "/andrews-zack.github.io/to-do-list-react/index.html",
+    "main.c59cc657.css.map": "/andrews-zack.github.io/to-do-list-react/static/css/main.c59cc657.css.map",
+    "main.b3219a2d.js.map": "/andrews-zack.github.io/to-do-list-react/static/js/main.b3219a2d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c59cc657.css",
+    "static/js/main.b3219a2d.js"
+  ]
+}
